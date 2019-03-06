@@ -26,6 +26,7 @@ int main() {
     if (!stackEmpty(&s)) {
         x = stackTop(&s);
     }
+
     printf("x=%d\n", x);
     printf("%d", stackEmpty(&s));
 
