@@ -8,19 +8,19 @@
 #ifdef ARRAY_BASED
 void intializeStack(Stack *ps) {
     ps->top = -1;
-};
+}
 
 void push(int item, Stack *ps) {
     ps->top++;
     ps->entery[ps->top] = item;
-};
+}
 
 bool stackFull(Stack *ps) {
     if (ps->top >= MAXSTACK)
         return true;
     return false;
     //return ps->top>=MAXSTACK;
-};
+}
 
 StackEntery pop(Stack *ps) {
     return ps->entery[ps->top--];
@@ -58,7 +58,7 @@ void traverseStack(Stack*ps,void(*pf)(StackEntery)){
 void intializeStack(Stack *ps) {
     ps->top = NULL;
     ps->size=0;
-};
+}
 
 void push(StackEntery item, Stack *ps) {
     StackNode *pn = (StackNode *) malloc(sizeof(StackNode));
