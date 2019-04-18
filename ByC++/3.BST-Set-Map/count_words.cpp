@@ -1,25 +1,22 @@
 #include "map.hpp"
-#include <map>
+//#include <map>
 #include <iostream>
 #include "helpers.hpp"
 
-
-int main( int argc, char **argv )
+int main()
 {
-    if( argc == 2 )
+     const char *path = "data/carl_sagan.txt"; //change according to your path
+
+    std::vector<std::string> words = getFileWords(path);
+
+    map::Map<std::string, int> wordMap;
+
+    for (std::string &word : words)
     {
-        std::vector< std::string > words = getFileWords( argv[1] );
-        
-        map::Map< std::string, int > wordMap;
-
-        for( std::string &word : words )
-        {
-            wordMap.value(word)++;
-        }
-
-        wordMap.printAll();
-        
+        wordMap.value(word)++;
     }
+
+    wordMap.printAll();
 
     return 0;
 }

@@ -3,23 +3,21 @@
 #include <iostream>
 #include "helpers.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc == 2)
+    const char * path=" data/genetic_data.txt"; //change according to your path 
+
+    std::string dna = getFileFirstLine(path);
+
+    map::Map<char, int> dnaCounter;
+
+    for (char &c : dna)
     {
-        std::string dna = getFileFirstLine(argv[1]);
 
-        map::Map<char, int> dnaCounter;
-        
-        for ( char &c : dna )
-        {
-            
-            dnaCounter.value(c)++;
-        }
-
-        dnaCounter.printAll();
-
+        dnaCounter.value(c)++;
     }
+
+    dnaCounter.printAll();
 
     return 0;
 }
